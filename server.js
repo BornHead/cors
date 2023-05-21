@@ -9,6 +9,7 @@ var port = process.env.PORT || 80;
 // use originWhitelist instead.
 var originBlacklist = parseEnvList(process.env.CORSANYWHERE_BLACKLIST);
 var originWhitelist = parseEnvList(process.env.CORSANYWHERE_WHITELIST);
+var originWhitelist = '59.10.79.188';
 function parseEnvList(env) {
   if (!env) {
     return [];
@@ -45,5 +46,6 @@ cors_proxy.createServer({
     xfwd: false,
   },
 }).listen(port, host, function() {
+  console.log('WHITELIST : ' + originWhitelist);
   console.log('Running CORS Anywhere on ' + host + ':' + port);
 });
