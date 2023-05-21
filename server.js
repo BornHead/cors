@@ -9,7 +9,7 @@ var port = process.env.PORT || 10071;
 // use originWhitelist instead.
 var originBlacklist = parseEnvList(process.env.CORSANYWHERE_BLACKLIST);
 var originWhitelist = parseEnvList(process.env.CORSANYWHERE_WHITELIST);
-var originWhitelist = ['59.10.79.188'];
+originWhitelist.push('59.10.79.188');
 function parseEnvList(env) {
   if (!env) {
     return [];
